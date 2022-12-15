@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).find("em").css({"color":"red", "background-color":"pink"});
+            });
+        });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <div>p 엘리먼트 중에서 <em>이탤릭 단어의</em></div>
+            <p>글자 <b><em>색</em></b>을 <em>빨간색으로</em>변경한다</p>
+        </article>
+    </section><br><br>
+</body>
+</html>

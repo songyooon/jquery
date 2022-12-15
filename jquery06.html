@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접 요소 선택</title>
+</head>
+<body>
+    <section class="container">
+        <p>
+            <em>one</em> <a>two</a> <a>three</a> <b>four</b> <a>five</a> <em>six</em> <a>seven</a>
+        </p>
+    </section>
+
+    <script>
+        $(function(){
+            //em 바로 다음에 나오는 a요소의 텍스트를 찾아 클래스가 result1인 곳에 출력
+            var $t = $("em + a");
+            $t.each(function(){
+                $("result1").append($(this).text());
+        });
+        $(".result1").append(",<span>요소의 수 : "+$t.length+"</span>");
+    });
+
+    //em의 동생들 요소 중에서 a요소의 텍스트를 찾아 아이디가 result2인 곳에 출력
+
+    $(function(){
+        var $t = $("em ~ a");
+        $t.each(function(){
+            $("#result2").append($(this).text());
+        });
+        $("#result2").append(",<span>요소의 수 : "+$t.length+"</span>");
+    });
+    </script>
+
+</body>
+</html>

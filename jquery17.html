@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <img data-value="미인 이미지"/>
+            <div class="res"></div>
+        </article>
+    </section><br><br>
+    <script>
+        $(document).ready(function(){
+            //img 첫요소에 src 속성을 임의 이미지로 연결하고 title 속성을 "아름다운 사람들"로 지정
+            //img 첫요소에 지정된 title 값을 클래스가 comment인 곳에 요소로 추가
+            //img 첫요소에 지정된 data-value 값을 클래스가 res인 곳에 텍스트로 추가
+
+            $("img:eq(0)").attr({"src":"beauty.jpg", "title":"아름다운 사람들"});
+            $("img:eq(0)").attr("alt", $("img:eq(0)").attr("data-value"));
+            $(".comment").append($("img:eq(0)").attr("title"));
+            $(".res").text($("img:eq(0)").attr("data-value"));
+
+        });
+    </script>
+</body>
+</html>

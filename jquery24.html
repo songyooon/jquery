@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+     $(funtion(){
+       $("button").on("click"), function(){
+            $(this).css("font-size", "20px").add("div").text("이벤트 적용");
+            $("div").addClass("rB").add("p").addClass("yB");
+        }
+    });
+    </script>
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <button class="btn">
+                클릭
+            </button>
+            <div></div> <div></div> <div></div>
+            <p>rB 클래스의 적용은 받지 못하고 yB 클래스의 적용 받음</p>
+        </article>
+    </section><br><br>
+</body>
+</html>

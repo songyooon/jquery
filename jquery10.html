@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <table>
+            <tr><td>zero</td></tr> <tr><td>one</td></tr>
+            <tr><td>two</td></tr> <tr><td>three</td></tr>
+            <tr><td>four</td></tr> <tr><td>five</td></tr>
+        </table>
+
+    </section><br><br>
+    <script>
+        $(document).ready(function(){
+            //td의 세번째 후 요소에 글자색을 빨강으로 변경
+
+        $("td:gt(2)").css("color","red");
+
+            //td의 다섯번째 전 요소에 textstyle 클래스를 부여
+
+        $("td:lt(4)").addClass("textstyle");
+
+        });
+
+    </script>
+</body>
+</html>

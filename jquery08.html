@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            //td의 짝수번째는 글자색을 빨강, 글자 크기를 30px로 변경
+
+        $("td:even").css("color","red").css("font-size","30px");
+        $("td:odd").css("background-color","red").css("font-size","30pt");
+        $(".result1").text("짝수번째 : "+$("td:even").text());
+    
+        });
+
+
+            //td의 홀수번째는 배경색을 빨강, 글자 크기를 30pt로 변경
+
+    </script>
+    <section class="container">
+        <table>
+            <tr><td>zero</td></tr> <tr><td>one</td></tr>
+            <tr><td>two</td></tr> <tr><td>three</td></tr>
+            <tr><td>four</td></tr> <tr><td>five</td></tr>
+        </table>
+    </section><br><br>
+</body>
+</html>

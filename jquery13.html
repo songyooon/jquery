@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div>
+            <input type="checkbox" name="fruit" /> <span>사과</span>
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" /> <span>바나나</span>
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" checked="checked" /> <span>오렌지</span>
+        </div>
+    </section><br><br>
+    <script>
+        $(document).ready(function(){
+            //체크박스의 다음 요소 span의 배경색을 빨강으로 설정
+            //체크박스가 체크되면 그 다음 요소 span의 글자색을 노랑으로 변경
+            //체크박스가 체크 해제되면 그 다음 요소 span의 글자색을 남색으로 변경
+
+            $("input:checkbox + span").css("background","red");
+
+            $("input[type=checkbox]:checked + span").css("color","yellow");
+            $("input[type=checkbox]:not(:checked) + span").css("color","navy");
+
+            $("input[type=checkbox]").click(function(){
+            $("input[type=checkbox]:checked + span").css("color","yellow");
+            $("input[type=checkbox]:not(:checked) + span").css("color","navy");
+
+        });
+
+    });
+    </script>
+</body>
+</html>

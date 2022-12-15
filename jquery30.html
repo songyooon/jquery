@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .data:after {content:""; display: block; clear: both;}
+    ul {float: left; margin: 5px; font-size: 16px; font-weight: bold;}
+    p {color:blue; margin: 10px 20px; font-size: 16px; padding: 5px; font-weight: bolder;}
+    .yw {background: yellow;} 
+</style>
+<script>
+    $(document).ready(function(){
+        var len = $(".yw").css("color","deepskyblue").siblings().css("color","red").length;
+        $("p u").text(len);
+    });
+</script>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <ul>
+                <li>one</li> <li>two</li> <li class="yw">three</li>
+                <li>four</li>
+            </ul>
+            <ul>
+                <li>five</li> <li>six</li> <li>seven</li>
+            </ul>
+            <ul>
+                <li>eight</li> <li class="yw">nine</li> <li>ten</li> <li>eleven</li>
+            </ul>
+            <p>찾은 형제 엘리먼트의 개수 : <u></u>개</p>
+        </article>
+    </section><br><br>
+</body>
+</html>

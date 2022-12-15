@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    $(function(){
+        $("button").click(function(){
+            $(this).next("div").css("background","yellow");
+            $(this).prev("div").css("background","red");
+            $("div").next().addClass("after");
+            $("div").prev("span").css("color","orange");
+            S("div").prevAll().css("padding","25px");
+        });
+    });
+
+
+</script>
+
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <button>바로 아래 형제 엘리먼트에 스타일 입히기1</button>
+            <div id="first">first</div>
+            <span id="second" class="middle">
+                sibling1 <div id="child">child</div>
+            </span>
+            <div id="third" class="middle">sibling2</div>
+            <span id="fourth" class="middle">sibling3</span>
+            <span id="fifth" class="middle">sibling4</span>
+            <div id="sixth">last</div>
+            <button>바로 위 형제 엘리먼트에 스타일 입히기1</button>
+        </article>
+    </section><br><br>
+</body>
+</html>

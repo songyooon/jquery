@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <p><b>난 너에게</b> 내 친구를 <span id="tag">소개시켜 줬고</span></p>
+            <p>그런 <span id="text">만남이 </span> 있은 후부터</p>
+            <p>넌 내게 <button name="okbtn">조금씩</button> 멀어지는 것을 느끼며</p>
+            <div id="console"></div>
+        </article>
+    </section><br><br>
+    <script>
+        $(document).ready(function(){
+            var sw = true;
+            //p요소를 클릭하면 클릭된 요소의 태그를 포함하여 아이디가 console인 곳에 텍스트 형태로 출력
+            $("p").click(function(){
+                $("#console").text($(this).html());
+            });
+        });
+    </script>
+</body>
+</html>

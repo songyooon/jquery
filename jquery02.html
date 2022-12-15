@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 선택자</title>
+    <script src="https://code.jquery.cpm/jquery-latest.js"></script>
+    
+    <style>
+    .highlight { font-weight:900;}
+    </style>
+    </head>
+<body>
+    <div id="con">
+        <ul>
+            <li><a href="https://jquery.com">텍스트1</a></li>
+            <li><a href="index.html">텍스트2</a></li>
+            <li><a>텍스트3</a></li>
+        </ul>
+    </div>
+
+    <button type="button" id="btn1">
+        버튼1
+    </button>
+
+    <script>
+    $(function(){
+        $("*").css("margin", "0px").css("padding", "0px");
+        $("a").css("text-decoration", "none").css("color", "skyblue").addClass("highlight");
+        $("#con").css({"margin-top":"30px", "padding":"20px"});
+        $(".lst").css("list-style", "none");
+        $("a[href]").css("background-color","skyblue");
+        $("a[href*='https'").css("padding","15px");
+        $("a[href$='.html'").css("background","orange");
+        $("#btn1").click(function(){
+            var cnt = $(".lst li").length+1;
+            $(".lst").append("<li><a href=''>텍스트"+cnt+"</a></li>")
+        });
+    });
+
+    </script>
+</body>
+</html>

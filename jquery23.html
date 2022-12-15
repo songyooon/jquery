@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <button id="submit">값 전송</button>
+            <button id="reset">초기화</button>
+            <input type="text" size="30" title="id입력" placeholder="id" id="m_id">
+            <div id="console"></div>
+        </article>
+    </section><br><br>
+    <script>
+        $(document).ready(function(){
+
+            //아이디가 reset인 버튼을 클릭하면 아이디가 m_id인 요소의 입력값을 비우고
+            //아이디가 submit인 버튼을 클릭하면 값이 비어있는지 검증을 하고 값이 있는 경우
+            //그 값을 아이디가 console인 곳에 텍스트로 출력
+
+            $("#reset").click(function(){
+             $("#m_id").val("");
+        });
+
+        $("submit").click(function(){
+            var data = $("m_id").val();
+            if(data==""){
+                alert("값을 입력해주세요");
+            } else {
+                $("#console").text(data);
+            }
+        });
+        function report(msg){
+            $("#console").text(msg);
+        }
+        });
+    </script>
+</body>
+</html>

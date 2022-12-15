@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container { clear: both; width: 1000px; margin: 20px auto;}
+    .container:after {content:""; display: block; clear: both;}
+    .data {clear: both;}
+    .data:after {content: ""; display: block; clear: both;}
+    p {width: 200px; height: 60px; margin: 20px; text-align: center; background: red; cursor:pointer; color:#fff; line-height: 60px;}
+</style>
+
+
+<script>
+    $(document).ready(function(){
+        var p = $("p:first");
+        $("#res1").text("width Size : "+P.outerWidth()+", Margin Include Size : "+p.outerWidth(true));
+        $("#res2").text("height Size : "+p.outerHeight()+", Margin Include Size : "+p.outerHeight(true));
+    });
+</script>
+
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <p>Hello</p>
+            <div id="res1"></div> <div id="res2"></div>
+        </article>
+    </section><br><br>
+</body>
+</html>

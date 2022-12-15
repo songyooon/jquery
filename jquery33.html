@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    $(document).ready(function(){
+        var cities = ["파주", "고양", "김포"]
+        var cards = ["뮤츠", "리자몽", "레쿠쟈"]
+    $(cities).each(function(index, value){
+      $("<li>"+value+"</li>").appendTo($("#cities_list"));
+});
+    $(cards).each(function(index, value){
+        $("<li>"+value+"</li>").prependTo($("#card_list"));
+    });
+});
+
+</script>
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <div><b>내가 살고 싶은 도시</b><ul id="cities_list"></ul></div>
+            <div><b>내가 갖고 싶은 카드</b><ul id="card_list"></ul></div>
+        </article>
+    </section><br><br>
+</body>
+</html>

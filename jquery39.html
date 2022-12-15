@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div.abs {width: 150px; height: 60px; position: absolute; left: 220px; top: 35px; background-color: green; cursor:pointer;}
+</style>
+<script>
+    $(document).ready(functioin(){
+        $(".abs").click(function(){
+        var $obj = $(this).offset();
+        $("#result").text(this.tagName + " coords("+$obj.left+", "+$obj.top+"), width:"+$(this).width()+", height:"+$(this).height());
+    });
+    $(".indata1").click(function(){
+        $("#result1").empty();
+        $(".abs").width($(".abs").width()*2);
+        $(".abs").height($(".abs").height()*2);
+    });
+});
+
+</script>
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <div id="result"></div> <div class="abs"></div>
+        </article>
+    </section><br><br><div class="indata1">초기화</div>
+</body>
+</html>

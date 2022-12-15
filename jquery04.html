@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.cpm/jquery-latest.js"></script>
+</head>
+<body>
+    <div>
+        <em>Hello!</em> <em>jQuery</em> <p><em>plugin</em></p> <em>forever</em>
+    </div>
+    <span>
+        <em>Good Bye!</em> <em>javascript</em> <p><em>plugin</em></p>
+    </span>
+
+<script>
+    $(function(){
+        $("span > em").css("color","navy");
+        $("span em").css("backgroundColor", "pink");
+    });
+</script>
+</body>
+</html>

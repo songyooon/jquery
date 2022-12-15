@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/"></script>
+    <title>Document</title>
+<style>
+    .container { clear: both; width: 1000px; margin: 20px auto;}
+    .container:after {content:""; display: block; clear: both;}
+    .data {clear: both;}
+    .data:after {content: ""; display: block; clear: both;}
+    p {width: 200px; height: 60px; margin: 20px; text-align: center; background: red; cursor:pointer; color:#fff; line-height: 60px;}
+</style>
+
+
+<script>
+    $(document).ready(function(){
+
+        $(window).resize(function(){
+            var wd = $(window).width();
+            if(wd>=960 || wd == wd0) {
+                $(".title").css("color","blue").css("font-size","48px");
+                $("img").attr("src","dy1.jpg").width(500);
+            } else if(wd>=768){
+                $(".title").css("color"."green").css("font-size","36px");
+                $(".comment").css("color","green").css("font-size","18px");
+                $("img").attr("src","dy2.jpg").width(400);
+            } else (
+                $(".title").css("color","red").css("font-size","24px");
+                $(".comment").css("color","red").css("font-size","14px");
+                $("img").attr("src","dy3.jpg").width(200);
+            )
+        }).resize();
+
+    });
+</script>
+
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <div><img src="dy1.jpg" id="pic1"></div>
+            <p></p> <p class="middle"></p> <p></p>
+        </article>
+    </section><br><br>
+</body>
+</html>

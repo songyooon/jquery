@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+    $(document).ready(function(){
+        var res1 = new Array();
+        $("b").parents().each(function(i){
+            res1[i] = this.tagName;
+        });
+        $("b").append(res1.reverse().join(","));
+        var res2 = new Array();
+        $("u").parent().css("color","red").each(function(i){
+            res2[i] = this.tagName;
+        });
+        $("u").append(res2.join(","));
+    });
+</script>
+
+
+</head>
+<body>
+    <header id="hd">헤더구역</header>
+    <section class="container">
+        <article class="data">
+            <p>
+                <span>여기는 <b>부모/조상 엘리먼트 모두 검색 : </b></span>
+            </p>
+            <div>
+                <span>여기는 <u>부모 엘리먼트만 검색 :</u></span>
+            </div>
+        </article>
+    </section><br><br>
+    <footer id="ft">푸터구역</footer>
+</body>
+</html>
