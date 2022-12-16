@@ -18,20 +18,25 @@
 
 <script>
     $(document).ready(function(){
+
+        $(".lst li").each(function(index){
+            $(this).delay(index*500).slideDown(600);
+        });
+
         $("#btn1").click(function(){
-            $(".lst li").show(2000, function(){
+            $(".lst li").slideDown(2000, function(){
                 $(".txt").text("리스트 박스가 보여지고 있습니다");
             });
         });
 
         $("#btn2").click(function(){
-            $(".lst li").hide("slow", function(){
+            $(".lst li").slideUp("slow", function(){
                 $(".txt").text("리스트 박스가 숨겨지고 있습니다");
             });
         });
 
         $("#btn3").click(function(){
-            $(".lst li").toggle("slow", function(){
+            $(".lst li").slideToggle("slow", function(){
                 var status = $(".list li").css("display");
                 if(status=="none"){
                     $(".txt").text("리스트 박스가 숨겨지고 있습니다");

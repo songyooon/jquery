@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery sample Effect4 : 애니메이션 응용4</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <style>
+    * { margin:0; padding:0; }
+    a { text-decoration:none; }
+    #wrap { width:400px; height:400px; margin:100px auto; }
+    .box { width:200px; height:200px; float:left; overflow:hidden; }
+    .up { width:200px; height:400px; margin-top:0; }
+    .box a { float:left; }
+    .box a img { display:block; width:200px; height:200px; }
+    .box .left { width:480px; height:200px; }
+    .box .left img { float:left; }
+    .box .right { width:480px;  height:200px; margin-left:-200px; }
+    .box .right img { float:left;}
+    .box .down { width:200px; height:400px; margin-top:-200px; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        //.box요소에 마우스 포인터를 올리면, 
+        //.up 인 요소는 위로 슬라이딩 되고, 
+        //.down 요소는 아래로 슬라이딩 되며,
+        // .left 요소는 왼쪽으로 슬라이딩 되고, 
+        //.right 요소는 오른쪽으로 슬라이딩 되며,
+        //.box요소에서 마우스 포인터가 빠져 나가면, 
+        //마우스 포인터를 올렸을 때의 반대 동작으로 될 수 있도록 구현하라.
+
+
+        $("box").mouseover(function(){
+            $("up").slideUp(2000, function(){
+            });
+            $("down").slideDown(2000, function(){
+            });
+            $("left").slideDown(2000, function(){
+                var ml = parseInt($("box").css("margin-left"));
+            if(ml>(len-1)*wd*-1){
+                $("box").not(":animated").animate({"margin-left":"-="+wd+"px"},
+                500);
+            }
+            });
+             $("right").slideDown(2000, function(){
+                var ml = parseInt($("box").css("margin-left"));
+            if(ml>(len-1)*wd*-1){
+                $("box").not(":animated").animate({"margin-right":"-="+wd+"px"},
+                500);
+            }
+
+            });
+
+        });
+
+
+        $("box").mouseout(function(){
+            $("up").slideUp(2000, function(){
+            });
+            $("down").slideDown(2000, function(){
+            });
+            $("left").slideDown(2000, function(){
+                var ml = parseInt($("box").css("margin-left"));
+            if(ml>(len-1)*wd*-1){
+                $("box").not(":animated").animate({"margin-left":"-="+wd+"px"},
+                500);
+            }
+            });
+             $("right").slideDown(2000, function(){
+                var ml = parseInt($("box").css("margin-left"));
+            if(ml>(len-1)*wd*-1){
+                $("box").not(":animated").animate({"margin-right":"-="+wd+"px"},
+                500);
+            }
+        });
+
+    });
+</script>
+</head>
+<body>
+    <div id="wrap">
+        <section class="box">
+            <a href="" class="up">
+                <img src="img1.jpg" alt="">
+                <img src="img2.jpg" alt="">
+            </a>
+        </section>
+        <section class="box">
+            <a href="" class="left">
+                <img src="img3.jpg" alt="">
+                <img src="img4.jpg" alt="">
+            </a>
+        </section>
+        <section class="box">
+            <a href="" class="right">
+                <img src="img5.jpg" alt="">
+                <img src="img6.jpg" alt="">
+            </a>
+        </section>
+        <section class="box">
+            <a href="" class="down">
+                <img src="img7.jpg" alt="">
+                <img src="img8.jpg" alt="">
+            </a>
+        </section>
+    </div>
+</body>
+</html>

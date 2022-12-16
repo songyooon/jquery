@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/"></script>
+    <title>Document</title>
+<style>
+
+    ul {list-style: none;}
+    .container {clear: both; width: 1000px; margin: 20px auto;}
+    .container:after {content: ""; display: block; clear: both;}
+    .date {clear: both;}
+    .data:after { content: ""; display: block; clear: both;}
+    #visual {width: 2000px; height: 200px; margin: 100px auto; overflow: hidden;}
+    .img_box {width: 2000px; height: 200px;}
+    .#visual a { display: block; width: 200px; height: 200px; float: left; position: relative;}
+    .#visual img {display: block; width: 200px; height: auto;}
+    .num {display: block; color: #000; background-color: yellow; border-radius: 20px; width: 40px; height: 40px; position: absolute;
+    z-index: 10; top: 20px; left: 20px; text-align: center; line-height: 40px;}
+    #btn_box { width: 200px; height: 30px; margin: 0px auto;}
+    #btn_box a {display: block; width: 30px; height: 30px; cursor: pointer;}
+    #btn_box .left {float: left;}
+    #btn_box .right {float: right;}
+    
+    
+
+</style>
+
+
+<script>
+    $(document).ready(function(){
+        var len = $(".img box a").length;
+        var wd = $("#visual").width();
+        $(".img box a").each(function(index){
+            $(this).find(".num").text(index+1);
+            $("#num_box").append("<span>"+(index+1)+"</span>")
+        });
+        $("#btn_box .left").click(function(){
+            var ml = parseInt($(".img_box").css("margin-left"));
+            if(ml<0){
+                $(".img_box").not(":animated").animate({"margin-left":"+="+wd+"px"},
+                500);
+                
+            }
+        });
+        $("#btn_box .right").click(function(){
+            var ml = parseInt($(".img_box").css("margin-left"));
+            if(ml>(len-1)*wd*-1){
+                $(".img_box").not(":animated").animate({"margin-left":"-="+wd+"px"},
+                500);
+            }
+        });
+
+
+    });
+</script>
+
+
+</head>
+<body>
+
+        <article class="data">
+            <section id="visual">
+                <div class="img_box">
+                    <a href="">
+                        <img src="dy1.jpg" alt="">
+                        <span class="num"></span>
+                    </a>
+                    <a href="">
+                        <img src="dy2.jpg" alt="">
+                        <span class="num"></span>
+                    </a>
+                    <a href="">
+                        <img src="dy3.jpg" alt="">
+                        <span class="num"></span>
+                    </a>
+                    <a href="">
+                        <img src="dy4.jpg" alt="">
+                        <span class="num"></span>
+                    </a>
+                </div>
+            </section>
+
+
+        </article>
+<br><br>
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <title>Document</title>
 <style>
     .lst, .btnFrame {margin: 30px auto; width: 600px; clear:both;}
@@ -18,20 +19,44 @@
 
 <script>
     $(document).ready(function(){
+
+        var opa = parseFloat($(".lst li").css("opacity"));
         $("#btn1").click(function(){
-            $(".lst li").show(2000, function(){
-                $(".txt").text("리스트 박스가 보여지고 있습니다");
+            if (opa<1) {
+                opa = opa + 0.1;
+
+            }
+            $(".lst li").clearQueue().fadeTo(300, opa);
+
+        });
+         
+        $("#btn2").click(function(){
+            if(opa>0) {
+                opa = opa - 0.1;
+
+            }
+            $(".lst li").clearQueue().fadeTo(300, opa);
+        });
+
+
+        $(".lst li").each(function(index){
+            $(this).delay(index*500).fadeIn(600, "easeInOutBounce");
+        });
+
+        $("#btn1").click(function(){
+            $(".lst li").each(function(index){
+                $(this).delay(index*500).fadeIn(2000, "easeOutElastic");
             });
         });
 
         $("#btn2").click(function(){
-            $(".lst li").hide("slow", function(){
+            $(".lst li").fadeOut("slow", function(){
                 $(".txt").text("리스트 박스가 숨겨지고 있습니다");
             });
         });
 
         $("#btn3").click(function(){
-            $(".lst li").toggle("slow", function(){
+            $(".lst li").fadeToggle("slow", function(){
                 var status = $(".list li").css("display");
                 if(status=="none"){
                     $(".txt").text("리스트 박스가 숨겨지고 있습니다");
