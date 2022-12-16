@@ -25,12 +25,17 @@
     </style>
     <script>
     $(document).ready(function(){
-       //아이디가 img1인 요소의 src가 img 디렉토리에 있는 이미지를 
+       //아이디가 img1인 요소의 src가 
+       //img 디렉토리에 있는 이미지를 
        //번갈아 제공하여 마치 춤을 추는 캐릭터가 될 수 있도록 구현하시오.
 
-        //interval 사용
+        //Setinterval 사용
 
-        
+        $("#img1.src").each(function(){
+            $(this).show("slow",function(){
+                
+            });
+        });
 
 
     });
