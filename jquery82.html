@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery 69 : jQuery 데이터 바인딩과 구글 차트 - 수직 막대</title>
+    <title>jQuery 69 : jQuery 데이터 바인딩과 구글 차트</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script> 
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
@@ -22,8 +22,7 @@
 </head>
 <body>
     <section class="container">
-        <h2>구글 차트 데이터 설정 - arrayToDataTable()</h2>
-        <h2>구글 차트 수직막대 그래프 - ColumnChart()</h2>
+
         <article class="data">
             <div id="chart1"></div>
         </article>
@@ -31,21 +30,23 @@
     <br><hr><br>
     
     <script>
-    //문서가 로딩되면, 아이디가 chart1인 곳에 
-    //구글 차트를 활용하여 야식의 인기도를 나타내는 수직 막대 그래프를 그리시오.
-    //데이터 : 피자:18, 치킨:42, 보쌈:14, 닭발:9, 기타:11
+
     
         google.charts.load('current', {packages:['corechart']});
 
         function drawChart(){
             var data = google.visualization.arrayToDataTable([
-                ["음식명","인기도"], ["피자",18], ["치킨",42], ["보쌈",14], ["닭발",9], ["기타",11]
+            ['Tasks','Hours per day'],
+            ['Work',9],
+            ['Eat',2],
+            ['Commute',2],
+            ['Watch TV',2],
+            ['Sleep',9]
             ]);
             var options = {
-                title : "야식의 인기도", width:600, height:400,
-                bar : {groupWidth: "80%"}, legend : {position: "none"}
+                title : "하루 일과 원형 그래프", width:700, height:400
             };
-            var chart = new google.visualization.Columnchart(document.getElementById("chart1"));
+            var chart = new google.visualization.piechart(document.getElementById("chart1"));
             chart.draw(data, options);
         }
 

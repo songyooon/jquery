@@ -39,7 +39,8 @@
 
         function drawChart(){
             var data = google.visualization.arrayToDataTable([
-                ["음식명","인기도"], ["피자",18], ["치킨",42], ["보쌈",14], ["닭발",9], ["기타",11]
+                ["음식명","인기도", {role:'annotaion'}, {role:'style'}], ["피자",18,"18","orange"], ["치킨",42,"42","gold"],
+                 ["보쌈",14,"14","deepskyblue"], ["닭발",9,"9","green"], ["기타",11,"11","purple"]
             ]);
             var options = {
                 title : "야식의 인기도", width:600, height:400,

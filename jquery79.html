@@ -31,18 +31,16 @@
     <br><hr><br>
     
     <script>
-    //문서가 로딩되면, 아이디가 chart1인 곳에 
-    //구글 차트를 활용하여 야식의 인기도를 나타내는 수직 막대 그래프를 그리시오.
-    //데이터 : 피자:18, 치킨:42, 보쌈:14, 닭발:9, 기타:11
+
     
         google.charts.load('current', {packages:['corechart']});
 
         function drawChart(){
             var data = google.visualization.arrayToDataTable([
-                ["음식명","인기도"], ["피자",18], ["치킨",42], ["보쌈",14], ["닭발",9], ["기타",11]
+            
             ]);
             var options = {
-                title : "야식의 인기도", width:600, height:400,
+                title : "남녀 색상 선호도", width:800, height:400,
                 bar : {groupWidth: "80%"}, legend : {position: "none"}
             };
             var chart = new google.visualization.Columnchart(document.getElementById("chart1"));
