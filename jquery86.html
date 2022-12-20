@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - ajax</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+            <form>
+                <select name="job">
+                    <option>Employment</option>
+                    <option>Founded</option>
+                </select>
+                <br>
+                <select name="position" multiple="multiple">
+                    <option>
+                        backend
+                    </option>
+                    <option selected="selected">
+                        SI
+                    </option>
+                    <option>
+                        SM
+                    </option>
+                    <br>
+                    <input type="checkbox" name="area" value="수도권" id="ch1" checked="checked">
+                    <label for="ch1">수도권</label>
+                    <input type="checkbox" name="area" value="지방" id="ch2">
+                    <label for="ch2">지방</label>
+                </select>
+            </form><br>
+            <button type="submit" id="btn1">전송할 데이터 확인</button>
+            <div id="result"></div>
+
+        </article>
+    </section>
+    <br><hr><br>
+
+    <script>
+        $(document).ready(function(){
+
+            $("form").submit(function(event){
+                var data = $(this).serializeArray();
+                $("#result").text(data);
+                console.log(data);
+                event.preventDefault();
+            });
+        });
+      
+
+
+    </script>
+
+
+
+
+    </div>
+</body>
+</html>

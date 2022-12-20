@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - ajax</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <section class="container">
+        <article class="data">
+
+            <button type="submit" id="btn1">전송할 데이터 확인</button>
+            <div id="result"></div>
+
+        </article>
+    </section>
+    <br><hr><br>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#btn1").click(function(){
+                $.ajaxSetup({url: "test.txt",
+                success: function(result){
+                    $("#result").html(result);
+            }
+            });
+
+            $.ajax();
+        });
+    });
+
+
+    </script>
+
+
+
+
+    </div>
+</body>
+</html>
